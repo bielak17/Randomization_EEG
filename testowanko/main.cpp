@@ -182,6 +182,8 @@ int main() {
 	zbiorek=utworz_Zbior();													//create the set with all the words
 	bool do_lista = true;
 	A* listaA = new A[R];
+	int ile_cong = 0;
+	int ile_incong = 0;
 	while (do_lista)
 	{
 		unsigned seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
