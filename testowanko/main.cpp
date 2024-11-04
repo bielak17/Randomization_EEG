@@ -312,28 +312,28 @@ A* utworz_Zbior() {
 	set[287] = { "mleko","lotnisko","kuchnia",4,3,false ,1,0,2 };
 	return set;
 }
-void wypisz_zbior(A set[],ostream &out)
+void wypisz_zbior(A set[],ostream &out,int rozmiar)
 {
-	for (int i = 0; i < R; i++)
+	for (int i = 0; i < rozmiar; i++)
 	{
 		if (set[i].rodzaj == 1 && set[i].rodzaj_cong == 0)
-			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_pasujacy << " " << set[i].kategoria << " MM " << endl;
+			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_pasujacy << " " << set[i].kategoria << " MM " << " "<<set[i].ordinal<<endl;
 		else if (set[i].rodzaj == 2 && set[i].rodzaj_cong == 0)
-			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_pasujacy << " " << set[i].kategoria << " FF " << endl;
+			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_pasujacy << " " << set[i].kategoria << " FF " << " " << set[i].ordinal << endl;
 		else if (set[i].rodzaj == 3 && set[i].rodzaj_cong == 0)
-			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_pasujacy << " " << set[i].kategoria << " NN " << endl;
+			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_pasujacy << " " << set[i].kategoria << " NN " << " " << set[i].ordinal << endl;
 		else if (set[i].rodzaj == 1 && set[i].rodzaj_cong == 2)
-			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_niepasujacy << " " << set[i].kategoria << " MF " << endl;
+			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_niepasujacy << " " << set[i].kategoria << " MF " << " " << set[i].ordinal << endl;
 		else if (set[i].rodzaj == 1 && set[i].rodzaj_cong == 3)
-			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_niepasujacy << " " << set[i].kategoria << " MN " << endl;
+			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_niepasujacy << " " << set[i].kategoria << " MN " << " " << set[i].ordinal << endl;
 		else if (set[i].rodzaj == 2 && set[i].rodzaj_cong == 1)
-			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_niepasujacy << " " << set[i].kategoria << " FM " << endl;
+			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_niepasujacy << " " << set[i].kategoria << " FM " << " " << set[i].ordinal << endl;
 		else if (set[i].rodzaj == 2 && set[i].rodzaj_cong == 3)
-			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_niepasujacy << " " << set[i].kategoria << " FN " << endl;
+			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_niepasujacy << " " << set[i].kategoria << " FN " << " " << set[i].ordinal << endl;
 		else if (set[i].rodzaj == 3 && set[i].rodzaj_cong == 1)
-			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_niepasujacy << " " << set[i].kategoria << " NM " << endl;
+			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_niepasujacy << " " << set[i].kategoria << " NM " << " " << set[i].ordinal << endl;
 		else if (set[i].rodzaj == 3 && set[i].rodzaj_cong == 2)
-			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_niepasujacy << " " << set[i].kategoria << " NF " << endl;
+			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_niepasujacy << " " << set[i].kategoria << " NF " << " " << set[i].ordinal << endl;
 	}
 }
 
@@ -342,6 +342,7 @@ void wypisz_zbior(A set[],ostream &out)
 
 void Bare_noun_list()
 {
+	cout << "Generating list for bare noun task." << endl;
 	A* set = new A[R];
 	set=utworz_Zbior();													//create the set with all the words
 	bool do_list = true;
@@ -355,6 +356,9 @@ void Bare_noun_list()
 	int ile_NN = 0;
 	int ile_NM = 0;
 	int ile_NF = 0;
+	bool half = false;
+	int used_flags[R];
+	A* saved_list = new A[R];
 	while (do_list)
 	{
 		unsigned seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
@@ -383,27 +387,56 @@ void Bare_noun_list()
 				if (time_span.count() > 1.33)									//if nothing is drawn for 2 seconds, break the loop and reset the list
 				{
 					cout << "Draw taken too long. Last position filled in list was: "<< i << "/" << R << endl;			//debugging help
-					cout << "MM: " << ile_MM << " MF: " << ile_MF << " MN: " << ile_MN << " FF: " << ile_FF << " FN: " << ile_FN << " FM: " << ile_FM << " NN: " << ile_NN << " NM: " << ile_NM << " NF: " << ile_NF << endl;	//debugging help
-					losowalne = false;
-					ile_MM = 0;
-					ile_MF = 0;
-					ile_MN = 0;
-					ile_FF = 0;
-					ile_FN = 0;
-					ile_FM = 0;
-					ile_NN = 0;
-					ile_NM = 0;
-					ile_NF = 0;
-					for (int j = 0; j < R; j++)
+					if (!half)
 					{
-						if(lista[j].used)									//reset the used flag
-							set[j].used = 0;
+						cout << "MM: " << ile_MM << " MF: " << ile_MF << " MN: " << ile_MN << " FF: " << ile_FF << " FN: " << ile_FN << " FM: " << ile_FM << " NN: " << ile_NN << " NM: " << ile_NM << " NF: " << ile_NF << endl;	//debugging help
+						ile_MM = 0;
+						ile_MF = 0;
+						ile_MN = 0;
+						ile_FF = 0;
+						ile_FN = 0;
+						ile_FM = 0;
+						ile_NN = 0;
+						ile_NM = 0;
+						ile_NF = 0;
 					}
+					losowalne = false;
 					break;
+				}
+				if (i == 0 && half)
+				{
+					for (int i = 0; i < R; i++)
+					{
+						lista[i] = saved_list[i];
+						set[i].used = used_flags[i];
+					}
+					i = R / 2;
+					cout << "Loaded 1st half" << endl;
 				}
 				int los = rand() % R;										//draw a random number
 				if (i >= 72)
 				{
+					if (!half)
+					{
+						cout << "1st quarter stats:" << endl;					//printing stats of the previous quarter and reseting variables used to count things
+						cout << "MM: " << ile_MM << " MF: " << ile_MF << " MN: " << ile_MN << " FF: " << ile_FF << " FN: " << ile_FN << " FM: " << ile_FM << " NN: " << ile_NN << " NM: " << ile_NM << " NF: " << ile_NF << endl;
+						ile_MM = 0;
+						ile_MF = 0;
+						ile_MN = 0;
+						ile_FF = 0;
+						ile_FN = 0;
+						ile_FM = 0;
+						ile_NN = 0;
+						ile_NM = 0;
+						ile_NF = 0;
+						cout << "Saving progress" << endl;
+						for (int j = 0; j < R; j++)								//saving the list and used flags
+						{
+							saved_list[j] = lista[j];
+							used_flags[j] = set[j].used;
+						}
+						half = true;
+					}
 					if (set[los].used==2)
 						continue;
 					else if (lista[i - 2].congruent && lista[i - 1].congruent && set[los].congruent)
@@ -646,22 +679,24 @@ void Bare_noun_list()
 			delete[]lista;
 		}
 	}
-	wypisz_zbior(listaA,cout);										//print the list
+	wypisz_zbior(listaA,cout,R);										//print the list
 	A* listaB= new A[R];
 	for (int i = 0; i < R; i++)										//create the reversed the list
 	{
 		listaB[R-i-1] = listaA[i];
 	}
 	cout << endl << endl << endl << "Printing reversed list" << endl;
-	wypisz_zbior(listaB,cout);											//print the reversed list
+	wypisz_zbior(listaB,cout,R);											//print the reversed list
 	fstream out;
+	out << "Word   |   Distractor   |   Category   |   Type   |   Ordinal" << endl << endl << endl;
 	out.open("lists_bare_noun.txt", ios::out);									//save the list to a file
-	wypisz_zbior(listaA, out);
+	wypisz_zbior(listaA, out,R);
 	out << "\n\n\n\Reversed list: " << endl;
-	wypisz_zbior(listaB, out);
+	wypisz_zbior(listaB, out,R);
 	out.close();
 	delete[]listaA;
 	delete[]listaB;
+	cout << "\nGenerating list for bare noun task finished." << endl << endl << endl;
 	return;
 }
 
@@ -670,10 +705,11 @@ void Bare_noun_list()
 
 void noun_phrase_list()
 {
+	cout << "\nGenerating list for noun phrase task." << endl;
 	A* set = new A[2*R];
 	set = utworz_Zbior();													//create the set with all the words
 	bool do_list = true;
-	A* listaA = new A[R];
+	A* listaA = new A[2*R];
 	int ile_MM = 0;
 	int ile_MF = 0;
 	int ile_MN = 0;
@@ -685,6 +721,11 @@ void noun_phrase_list()
 	int ile_NF = 0;
 	int ile_1 = 0;
 	int ile_2 = 0;
+	bool Q1 = 0;
+	bool Q2 = 0;
+	bool Q3 = 0;
+	A* saved_list = new A[2 * R];
+	int used_flags[2 * R];
 	while (do_list)
 	{
 		unsigned seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
@@ -732,6 +773,36 @@ void noun_phrase_list()
 							set[j].used = 0;
 					}
 					break;
+				}
+				if (i==0 && Q1)
+				{
+					for (int i = 0; i < 2*R; i++)
+					{
+						lista[i] = saved_list[i];
+						set[i].used = used_flags[i];
+					}
+					i = R / 2;
+					cout << "Loaded 1st quarter" << endl;
+				}
+				else if (i == 0 && Q2)
+				{
+					for (int i = 0; i < 2 * R; i++)
+					{
+						lista[i] = saved_list[i];
+						set[i].used = used_flags[i];
+					}
+					i = R;
+					cout << "Loaded two quarters" << endl;
+				}
+				else if (i == 0 && Q3)
+				{
+					for (int i = 0; i < 2 * R; i++)
+					{
+						lista[i] = saved_list[i];
+						set[i].used = used_flags[i];
+					}
+					i = 3 * R / 2;
+					cout << "Loaded three quarters" << endl;
 				}
 				int los = rand() % (2 * R);										//draw a random number
 				if (i == 0)												//just assigning word to the list and changing used flags of the same word but with different form and ordinal it will be used all the time when adding new word to generated list
@@ -1016,7 +1087,7 @@ void noun_phrase_list()
 				}
 				if (i >= 72 && i < 144)													//drawing 2nd quarter now used flag will be set as 2 and we are checking if flag is less than 2 everything else the same as in 1st
 				{
-					if (i == 72)
+					if (!Q1)
 					{
 						cout << "1st quarter stats:" << endl;					//printing stats of the previous quarter and reseting variables used to count things
 						cout << "MM: " << ile_MM << " MF: " << ile_MF << " MN: " << ile_MN << " FF: " << ile_FF << " FN: " << ile_FN << " FM: " << ile_FM << " NN: " << ile_NN << " NM: " << ile_NM << " NF: " << ile_NF << " 1: " << ile_1 << " 2: " << ile_2 << endl;
@@ -1031,6 +1102,13 @@ void noun_phrase_list()
 						ile_NF = 0;
 						ile_1 = 0;
 						ile_2 = 0;
+						cout << "Saving progress" << endl;
+						for (int j = 0; j < 2 * R; j++)
+						{
+							saved_list[j] = lista[j];
+							used_flags[j] = set[j].used;
+						}
+						Q1 = true;
 					}
 					if (set[los].used<2)
 						continue;
@@ -1126,7 +1204,7 @@ void noun_phrase_list()
 				}
 				if (i >= 144 && i < 216)													//drawing 3rd quarter now used flag will be set as 3 and we are checking if flag is less than 3 everything else the same as in 1st adn 2nd 
 				{
-					if (i == 144)
+					if (!Q2)
 					{
 						cout << "2nd quarter stats:" << endl;
 						cout << "MM: " << ile_MM << " MF: " << ile_MF << " MN: " << ile_MN << " FF: " << ile_FF << " FN: " << ile_FN << " FM: " << ile_FM << " NN: " << ile_NN << " NM: " << ile_NM << " NF: " << ile_NF << " 1: " << ile_1 << " 2: " << ile_2 << endl;
@@ -1141,6 +1219,14 @@ void noun_phrase_list()
 						ile_NF = 0;
 						ile_1 = 0;
 						ile_2 = 0;
+						cout << "Saving progress" << endl;
+						for (int j = 0; j < 2 * R; j++)
+						{
+							saved_list[j] = lista[j];
+							used_flags[j] = set[j].used;
+						}
+						Q1 = false;
+						Q2 = true;
 					}
 					if (set[los].used < 3)
 						continue;
@@ -1236,7 +1322,7 @@ void noun_phrase_list()
 				}
 				if (i >= 216)														//drawing last quarter now used flag will be set as 4 = done and other words flags wont be changed because they were already used everything else the same as in other quarters
 				{
-					if (i == 144)
+					if (!Q3)
 					{
 						cout << "3rd quarter stats:" << endl;
 					cout << "MM: " << ile_MM << " MF: " << ile_MF << " MN: " << ile_MN << " FF: " << ile_FF << " FN: " << ile_FN << " FM: " << ile_FM << " NN: " << ile_NN << " NM: " << ile_NM << " NF: " << ile_NF << " 1: " << ile_1 << " 2: " << ile_2 << endl;
@@ -1251,6 +1337,14 @@ void noun_phrase_list()
 						ile_NF = 0;
 						ile_1 = 0;
 						ile_2 = 0;
+						cout << "Saving progress" << endl;
+						for (int j = 0; j < 2 * R; j++)
+						{
+							saved_list[j] = lista[j];
+							used_flags[j] = set[j].used;
+						}
+						Q2 = false;
+						Q3 = true;
 					}
 					if (set[los].used < 4)
 					continue;
@@ -1338,14 +1432,14 @@ void noun_phrase_list()
 		{
 			do_list = false;
 			cout << "Draw finished successfully. List is set" << endl;
-			for (int i = 0; i < R; i++)
+			for (int i = 0; i < 2 * R; i++)
 			{
 				listaA[i] = lista[i];
 			}
 		}
 		else
 		{
-			for (int i = 0; i < R; i++)
+			for (int i = 0; i < 2 * R; i++)
 			{
 				if (set[i].used)									//reset the used flag
 				{
@@ -1355,12 +1449,14 @@ void noun_phrase_list()
 			delete[]lista;
 		}
 	}
-	wypisz_zbior(listaA, cout);
+	wypisz_zbior(listaA, cout, 2 * R);
 	fstream out;
+	out << "Word   |   Distractor   |   Category   |   Type   |   Ordinal" << endl << endl << endl;
 	out.open("lists_noun_phrase.txt", ios::out);									//save the list to a file
-	wypisz_zbior(listaA, out);
+	wypisz_zbior(listaA, out, 2 * R);
 	out.close();
 	delete[]listaA;
+	cout << "\nGenerating list for noun phrase task finished" << endl;
 	return;
 }
 
@@ -1368,7 +1464,30 @@ void noun_phrase_list()
 
 int main()
 {
-	noun_phrase_list();
-	//Bare_noun_list();
+	bool program = true;
+	while (program)
+	{
+		cout << "Pick which list would you like to generate: " << endl;
+		cout << "1. Generate list for bare noun task" << endl;
+		cout << "2. Generate list for noun phrase task" << endl;		//menu to choose which list to generate
+		cout << "0. Exit" << endl;
+		int choice;
+		cin >> choice;
+		switch (choice)													//switch to choose which list to generate
+		{
+		case 0:
+			program = false;
+			break;
+		case 1:
+			Bare_noun_list();
+			break;
+		case 2:
+			noun_phrase_list();
+			break;
+		default:
+			cout << "Wrong choice. Try again." << endl;
+			break;
+		}
+	}
 	return 0;
 }
