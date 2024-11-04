@@ -691,7 +691,7 @@ void Bare_noun_list()
 	out << "Word   |   Distractor   |   Category   |   Type   |   Ordinal" << endl << endl << endl;
 	out.open("lists_bare_noun.txt", ios::out);									//save the list to a file
 	wypisz_zbior(listaA, out,R);
-	out << "\n\n\n\Reversed list: " << endl;
+	out << "\n\n\nReversed list: " << endl;
 	wypisz_zbior(listaB, out,R);
 	out.close();
 	delete[]listaA;
@@ -751,7 +751,7 @@ void noun_phrase_list()
 			{
 				auto end = std::chrono::high_resolution_clock::now();
 				chrono::duration<double> time_span = chrono::duration_cast<chrono::duration<double>>(end - start);
-				if (time_span.count() > 1.33)									//if nothing is drawn for 2 seconds, break the loop and reset the list
+				if ((time_span.count() > 1.33 && !Q2) || (Q2 && time_span.count()>3.0))						//if nothing is drawn for 2 seconds, break the loop and reset the list
 				{
 					cout << "Draw taken too long. Last position filled in list was: " << i << "/" << 2 * R << endl;			//debugging help
 					cout << "Not fully filled quarter stats:" << endl;
@@ -1110,7 +1110,7 @@ void noun_phrase_list()
 						}
 						Q1 = true;
 					}
-					if (set[los].used<2)
+					if (set[los].used!=1)
 						continue;
 					else if (lista[i - 2].congruent && lista[i - 1].congruent && set[los].congruent)
 						continue;
@@ -1228,7 +1228,7 @@ void noun_phrase_list()
 						Q1 = false;
 						Q2 = true;
 					}
-					if (set[los].used < 3)
+					if (set[los].used !=2)
 						continue;
 					else if (lista[i - 2].congruent && lista[i - 1].congruent && set[los].congruent)
 						continue;
@@ -1271,33 +1271,33 @@ void noun_phrase_list()
 					if (los < 72)
 					{
 						set[los].used = 4;
-						if (set[los + R / 2].used == 2) set[los + R / 2].used = 2;
-						if (set[los + R].used == 2) set[los + R].used = 2;
-						if (set[los + 3 * R / 2].used == 2) set[los + 3 * R / 2].used = 2;
+						if (set[los + R / 2].used == 2) set[los + R / 2].used = 3;
+						if (set[los + R].used == 2) set[los + R].used = 3;
+						if (set[los + 3 * R / 2].used == 2) set[los + 3 * R / 2].used = 3;
 						lista[i] = set[los];
 					}
 					else if (los < 144)
 					{
 						set[los].used = 4;
-						if (set[los + R / 2].used == 2) set[los + R / 2].used = 2;
-						if (set[los + R].used == 2) set[los + R].used = 2;
-						if (set[los - R / 2].used == 2) set[los + 3 * R / 2].used = 2;
+						if (set[los + R / 2].used == 2) set[los + R / 2].used = 3;
+						if (set[los + R].used == 2) set[los + R].used = 3;
+						if (set[los - R / 2].used == 2) set[los + 3 * R / 2].used = 3;
 						lista[i] = set[los];
 					}
 					else if (los < 216)
 					{
 						set[los].used = 4;
-						if (set[los + R / 2].used == 2) set[los + R / 2].used = 2;
-						if (set[los - R].used == 2) set[los + R].used = 2;
-						if (set[los - R / 2].used == 2) set[los + 3 * R / 2].used = 2;
+						if (set[los + R / 2].used == 2) set[los + R / 2].used = 3;
+						if (set[los - R].used == 2) set[los + R].used = 3;
+						if (set[los - R / 2].used == 2) set[los + 3 * R / 2].used = 3;
 						lista[i] = set[los];
 					}
 					else
 					{
 						set[los].used = 4;
-						if (set[los - R / 2].used == 2) set[los + R / 2].used = 2;
-						if (set[los - R].used == 2) set[los + R].used = 2;
-						if (set[los - 3 * R / 2].used == 2) set[los + 3 * R / 2].used = 2;
+						if (set[los - R / 2].used == 2) set[los + R / 2].used = 3;
+						if (set[los - R].used == 2) set[los + R].used = 3;
+						if (set[los - 3 * R / 2].used == 2) set[los + 3 * R / 2].used = 3;
 						lista[i] = set[los];
 					}
 					set[los].ordinal == 1 ? ile_1++ : ile_2++;
@@ -1346,7 +1346,7 @@ void noun_phrase_list()
 						Q2 = false;
 						Q3 = true;
 					}
-					if (set[los].used < 4)
+					if (set[los].used != 3)
 					continue;
 					else if (lista[i - 2].congruent && lista[i - 1].congruent && set[los].congruent)
 					continue;
