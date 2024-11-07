@@ -679,6 +679,7 @@ void Bare_noun_list()
 			delete[]lista;
 		}
 	}
+	cout << "Word   |   Distractor   |   Category   |   Type   |   Ordinal" << endl << endl << endl;
 	wypisz_zbior(listaA,cout,R);										//print the list
 	A* listaB= new A[R];
 	for (int i = 0; i < R; i++)										//create the reversed the list
@@ -688,8 +689,8 @@ void Bare_noun_list()
 	cout << endl << endl << endl << "Printing reversed list" << endl;
 	wypisz_zbior(listaB,cout,R);											//print the reversed list
 	fstream out;
-	out << "Word   |   Distractor   |   Category   |   Type   |   Ordinal" << endl << endl << endl;
 	out.open("lists_bare_noun.txt", ios::out);									//save the list to a file
+	out << "Word   |   Distractor   |   Category   |   Type   |   Ordinal" << endl << endl << endl;
 	wypisz_zbior(listaA, out,R);
 	out << "\n\n\nReversed list: " << endl;
 	wypisz_zbior(listaB, out,R);
@@ -747,7 +748,7 @@ void noun_phrase_list()
 				break;
 			}
 			auto start = std::chrono::high_resolution_clock::now();			//start the timer between draws
-			while (lista[i].used == 0)
+			while (lista[i].used ==0)
 			{
 				auto end = std::chrono::high_resolution_clock::now();
 				chrono::duration<double> time_span = chrono::duration_cast<chrono::duration<double>>(end - start);
@@ -1219,6 +1220,7 @@ void noun_phrase_list()
 						ile_NF = 0;
 						ile_1 = 0;
 						ile_2 = 0;
+						wypisz_zbior(lista,cout, R);
 						cout << "Saving progress" << endl;
 						for (int j = 0; j < 2 * R; j++)
 						{
@@ -1449,10 +1451,11 @@ void noun_phrase_list()
 			delete[]lista;
 		}
 	}
+	cout << "Word   |   Distractor   |   Category   |   Type   |   Ordinal" << endl << endl << endl;
 	wypisz_zbior(listaA, cout, 2 * R);
 	fstream out;
-	out << "Word   |   Distractor   |   Category   |   Type   |   Ordinal" << endl << endl << endl;
 	out.open("lists_noun_phrase.txt", ios::out);									//save the list to a file
+	out << "Word   |   Distractor   |   Category   |   Type   |   Ordinal" << endl << endl << endl;
 	wypisz_zbior(listaA, out, 2 * R);
 	out.close();
 	delete[]listaA;
