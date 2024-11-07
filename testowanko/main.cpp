@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 #include <list>
 #include <chrono>
@@ -8,7 +8,7 @@
 
 using namespace std;
 
-struct A{
+struct A {
 	string slowo;
 	string congruent_pasujacy;
 	string congruent_niepasujacy;
@@ -21,303 +21,303 @@ struct A{
 };
 
 A* utworz_Zbior() {
-	A* set = new A[2*R];
+	A* set = new A[2 * R];
 	set[0] = { "kalendarz","olej","brama",1,1,false, 0,2 };
-	set[1] = { "kapelusz","ziemniak","œciana",2,1,false,0,2 };
-	set[2] = { "but","artyku³","woda",2,1,false,0,2 };
+	set[1] = { "kapelusz","ziemniak","Å›ciana",2,1,false,0,2 };
+	set[2] = { "but","artykuÅ‚","woda",2,1,false,0,2 };
 	set[3] = { "kwiat","zamek","stacja",3,1,false,0,2 };
-	set[4] = { "ksiê¿yc","w³ókno","lina",3,1,false,0,2 };
-	set[5] = { "mózg","korzeñ","kasa",6,1,false,0,2 };
+	set[4] = { "ksiÄ™Å¼yc","wÅ‚Ã³kno","lina",3,1,false,0,2 };
+	set[5] = { "mÃ³zg","korzeÅ„","kasa",6,1,false,0,2 };
 	set[6] = { "obraz","cukier","luka",7,1,false,0,2 };
-	set[7] = { "ogieñ","hotel","zabawa",3,1,false,0,2 };
-	set[8] = { "stó³","film","kaczka",8,1,false,0,2 };
+	set[7] = { "ogieÅ„","hotel","zabawa",3,1,false,0,2 };
+	set[8] = { "stÃ³Å‚","film","kaczka",8,1,false,0,2 };
 	set[9] = { "telefon","sklep","kawa",10,1,false,0,2 };
-	set[10] = {"lew","kran","orkiestra",9,1,false,0,2};
-	set[11] = { "cieñ","klucz","koszula",3,1,false,0,2 };
-	set[12] = { "kolczyk","tunel","s³owo",2,1,false,0,3 };
-	set[13] = { "rower","kamieñ","wideo",13,1,false,0 ,3};
-	set[14] = { "bêben","wieniec","ciasto",12,1,false,0 ,3};
-	set[15] = { "cmentarz","kot","b³oto",5,1,false,0,3 };
+	set[10] = { "lew","kran","orkiestra",9,1,false,0,2 };
+	set[11] = { "cieÅ„","klucz","koszula",3,1,false,0,2 };
+	set[12] = { "kolczyk","tunel","sÅ‚owo",2,1,false,0,3 };
+	set[13] = { "rower","kamieÅ„","wideo",13,1,false,0 ,3 };
+	set[14] = { "bÄ™ben","wieniec","ciasto",12,1,false,0 ,3 };
+	set[15] = { "cmentarz","kot","bÅ‚oto",5,1,false,0,3 };
 	set[16] = { "guzik","taniec","kino",2,1,false,0,3 };
-	set[17] = { "jêzyk","teatr","szk³o",6,1,false,0,3 };
-	set[18] = { "koœció³","miœ","czo³o",5,1,false,0,3 };
+	set[17] = { "jÄ™zyk","teatr","szkÅ‚o",6,1,false,0,3 };
+	set[18] = { "koÅ›ciÃ³Å‚","miÅ›","czoÅ‚o",5,1,false,0,3 };
 	set[19] = { "miecz","czajnik","ucho",15,1,false,0,3 };
-	set[20] = { "tron","list","z³oto",8,1,false,0,3 };
-	set[21] = { "ci¹gnik","fortepian","srebro",13,1,false,0,3 };
-	set[22] = { "ser","widelec","ŸdŸb³o",4,1,false,0,3 };
-	set[23] = { "wielb³¹d","mê¿czyzna","lotnisko",9,1,false,0,3 };
+	set[20] = { "tron","list","zÅ‚oto",8,1,false,0,3 };
+	set[21] = { "ciÄ…gnik","fortepian","srebro",13,1,false,0,3 };
+	set[22] = { "ser","widelec","ÅºdÅºbÅ‚o",4,1,false,0,3 };
+	set[23] = { "wielbÅ‚Ä…d","mÄ™Å¼czyzna","lotnisko",9,1,false,0,3 };
 	set[24] = { "gazeta","brama","olej",1,2,false,0,1 };
-	set[25] = { "góra","œciana","ziemniak",3,2,false,0,1 };
+	set[25] = { "gÃ³ra","Å›ciana","ziemniak",3,2,false,0,1 };
 	set[26] = { "kostka","woda","zamek",7,2,false,0,1 };
-	set[27] = { "lalka","stacja","w³ókno",7,2,false,0,1 };
-	set[28] = { "mapa","luka","artyku³",1,2,false,0,1 };
-	set[29] = { "rakieta","kasa","korzeñ",13,2,false,0,1 };
-	set[30] = { "wró¿ka","lina","kran",15,2,false,0,1 };
+	set[27] = { "lalka","stacja","wÅ‚Ã³kno",7,2,false,0,1 };
+	set[28] = { "mapa","luka","artykuÅ‚",1,2,false,0,1 };
+	set[29] = { "rakieta","kasa","korzeÅ„",13,2,false,0,1 };
+	set[30] = { "wrÃ³Å¼ka","lina","kran",15,2,false,0,1 };
 	set[31] = { "kobieta","zabawka","hotel",15,2,false,0,1 };
-	set[32] = { "krowa","g³owa","film",9,2,false,0,1 };
+	set[32] = { "krowa","gÅ‚owa","film",9,2,false,0,1 };
 	set[33] = { "flaga","kaczka","cukier",1,2,false,0,1 };
 	set[34] = { "kukurydza","orkiestra","sklep",4,2,false,0,1 };
-	set[35] = { "œwinia","koszula","klucz",9,2,false,0,1 };
-	set[36] = { "butelka","kawa","cia³o",1,2,false,0,3 };
-	set[37] = { "ryba","laska","wzgórze",9,2,false,0,3 };
-	set[38] = { "gwiazda","szafa","ramiê",3,2,false,0,3 };
-	set[39] = { "ksi¹¿ka","rzeka","wino",7,2,false,0,3 };
-	set[40] = { "wie¿a","torebka","biurko",5,2,false,0,3 };
-	set[41] = { "sieæ","mg³a","rondo",1,2,false,0,3 };
-	set[42] = { "bomba","szko³a","œwiat³o",15,2,false,0,3 };
-	set[43] = { "noga","fili¿anka","wiaderko",6,2,false,0,3 };
-	set[44] = { "rêka","herbata","jedzenie",6,2,false ,0,3};
-	set[45] = { "noc","chata","bia³ko",3,2,false ,0,3};
+	set[35] = { "Å›winia","koszula","klucz",9,2,false,0,1 };
+	set[36] = { "butelka","kawa","ciaÅ‚o",1,2,false,0,3 };
+	set[37] = { "ryba","laska","wzgÃ³rze",9,2,false,0,3 };
+	set[38] = { "gwiazda","szafa","ramiÄ™",3,2,false,0,3 };
+	set[39] = { "ksiÄ…Å¼ka","rzeka","wino",7,2,false,0,3 };
+	set[40] = { "wieÅ¼a","torebka","biurko",5,2,false,0,3 };
+	set[41] = { "sieÄ‡","mgÅ‚a","rondo",1,2,false,0,3 };
+	set[42] = { "bomba","szkoÅ‚a","Å›wiatÅ‚o",15,2,false,0,3 };
+	set[43] = { "noga","filiÅ¼anka","wiaderko",6,2,false,0,3 };
+	set[44] = { "rÄ™ka","herbata","jedzenie",6,2,false ,0,3 };
+	set[45] = { "noc","chata","biaÅ‚ko",3,2,false ,0,3 };
 	set[46] = { "czekolada","kuchnia","ziarno",4,2,false,0,3 };
-	set[47] = { "fabryka","bateria","ciastko",5,2,false ,0,3};
-	set[48] = { "¿elazko","s³owo","tunel",1,3,false ,0,1};
-	set[49] = { "jab³ko","wideo","kamieñ",4,3,false ,0,1};
-	set[50] = { "jezioro","kino","taniec",3,3,false ,0,1};
-	set[51] = { "krzes³o","ciasto","wieniec",8,3,false,0,1 };
-	set[52] = { "skrzyd³o","b³oto","kot",6,3,false,0,1 };
-	set[53] = { "mas³o","szk³o","teatr",4,3,false,0,1 };
-	set[54] = { "okno","czo³o","list",8,3,false,0,1 };
+	set[47] = { "fabryka","bateria","ciastko",5,2,false ,0,3 };
+	set[48] = { "Å¼elazko","sÅ‚owo","tunel",1,3,false ,0,1 };
+	set[49] = { "jabÅ‚ko","wideo","kamieÅ„",4,3,false ,0,1 };
+	set[50] = { "jezioro","kino","taniec",3,3,false ,0,1 };
+	set[51] = { "krzesÅ‚o","ciasto","wieniec",8,3,false,0,1 };
+	set[52] = { "skrzydÅ‚o","bÅ‚oto","kot",6,3,false,0,1 };
+	set[53] = { "masÅ‚o","szkÅ‚o","teatr",4,3,false,0,1 };
+	set[54] = { "okno","czoÅ‚o","list",8,3,false,0,1 };
 	set[55] = { "radio","ucho","czajnik",10,3,false,0,1 };
-	set[56] = { "akwarium","z³oto","miœ",1,3,false,0,1 };
+	set[56] = { "akwarium","zÅ‚oto","miÅ›",1,3,false,0,1 };
 	set[57] = { "lustro","srebro","fortepian",1,3,false,0,1 };
-	set[58] = { "kiwi","cia³o","widelec",4,3,false,0,1 };
-	set[59] = { "laboratorium","ciastko","mê¿czyzna",5,3,false,0,1 };
-	set[60] = { "serce","bia³ko","g³owa",11,3,false ,0,2};
-	set[61] = { "miasto","wzgórze","laska",5,3,false ,0,2};
-	set[62] = { "³ó¿ko","ramiê","rzeka",8,3,false ,0,2};
-	set[63] = { "kolano","wino","szafa",6,3,false ,0,2};
-	set[64] = { "jajko","wiaderko","szko³a",4,3,false ,0,2};
-	set[65] = { "ko³o","œwiat³o","torebka",11,3,false ,0,2};
-	set[66] = { "miêso","biurko","fili¿anka",4,3,false ,0,2};
-	set[67] = { "oko","rondo","mg³a",6,3,false ,0,2};
-	set[68] = { "s³oñce","jedzenie","herbata",3,3,false,0,2 };
-	set[69] = { "myd³o","ziarno","chata",1,3,false ,0,2};
-	set[70] = { "wiêzienie","ŸdŸb³o","bateria",5,3,false,0,2 };
-	set[71] = { "mleko","lotnisko","kuchnia",4,3,false ,0,2};
+	set[58] = { "kiwi","ciaÅ‚o","widelec",4,3,false,0,1 };
+	set[59] = { "laboratorium","ciastko","mÄ™Å¼czyzna",5,3,false,0,1 };
+	set[60] = { "serce","biaÅ‚ko","gÅ‚owa",11,3,false ,0,2 };
+	set[61] = { "miasto","wzgÃ³rze","laska",5,3,false ,0,2 };
+	set[62] = { "Å‚Ã³Å¼ko","ramiÄ™","rzeka",8,3,false ,0,2 };
+	set[63] = { "kolano","wino","szafa",6,3,false ,0,2 };
+	set[64] = { "jajko","wiaderko","szkoÅ‚a",4,3,false ,0,2 };
+	set[65] = { "koÅ‚o","Å›wiatÅ‚o","torebka",11,3,false ,0,2 };
+	set[66] = { "miÄ™so","biurko","filiÅ¼anka",4,3,false ,0,2 };
+	set[67] = { "oko","rondo","mgÅ‚a",6,3,false ,0,2 };
+	set[68] = { "sÅ‚oÅ„ce","jedzenie","herbata",3,3,false,0,2 };
+	set[69] = { "mydÅ‚o","ziarno","chata",1,3,false ,0,2 };
+	set[70] = { "wiÄ™zienie","ÅºdÅºbÅ‚o","bateria",5,3,false,0,2 };
+	set[71] = { "mleko","lotnisko","kuchnia",4,3,false ,0,2 };
 	set[72] = { "kalendarz","olej","brama",1,1,false, 1,0 };
-	set[73] = { "kapelusz","ziemniak","œciana",2,1,false,1,0 };
-	set[74] = { "but","artyku³","woda",2,1,false,1,0 };
+	set[73] = { "kapelusz","ziemniak","Å›ciana",2,1,false,1,0 };
+	set[74] = { "but","artykuÅ‚","woda",2,1,false,1,0 };
 	set[75] = { "kwiat","zamek","stacja",3,1,false,1,0 };
-	set[76] = { "ksiê¿yc","w³ókno","lina",3,1,false,1,0 };
-	set[77] = { "mózg","korzeñ","kasa",6,1,false,1,0 };
+	set[76] = { "ksiÄ™Å¼yc","wÅ‚Ã³kno","lina",3,1,false,1,0 };
+	set[77] = { "mÃ³zg","korzeÅ„","kasa",6,1,false,1,0 };
 	set[78] = { "obraz","cukier","luka",7,1,false,1,0 };
-	set[79] = { "ogieñ","hotel","zabawa",3,1,false,1,0 };
-	set[80] = { "stó³","film","kaczka",8,1,false,1,0 };
+	set[79] = { "ogieÅ„","hotel","zabawa",3,1,false,1,0 };
+	set[80] = { "stÃ³Å‚","film","kaczka",8,1,false,1,0 };
 	set[81] = { "telefon","sklep","kawa",10,1,false,1,0 };
 	set[82] = { "lew","kran","orkiestra",9,1,false,1,0 };
-	set[83] = { "cieñ","klucz","koszula",3,1,false,1,0 };
-	set[84] = { "kolczyk","tunel","s³owo",2,1,false,1,0 };
-	set[85] = { "rower","kamieñ","wideo",13,1,false,1,0 };
-	set[86] = { "bêben","wieniec","ciasto",12,1,false,1,0 };
-	set[87] = { "cmentarz","kot","b³oto",5,1,false,1,0 };
+	set[83] = { "cieÅ„","klucz","koszula",3,1,false,1,0 };
+	set[84] = { "kolczyk","tunel","sÅ‚owo",2,1,false,1,0 };
+	set[85] = { "rower","kamieÅ„","wideo",13,1,false,1,0 };
+	set[86] = { "bÄ™ben","wieniec","ciasto",12,1,false,1,0 };
+	set[87] = { "cmentarz","kot","bÅ‚oto",5,1,false,1,0 };
 	set[88] = { "guzik","taniec","kino",2,1,false,1,0 };
-	set[89] = { "jêzyk","teatr","szk³o",6,1,false,1,0 };
-	set[90] = { "koœció³","miœ","czo³o",5,1,false,1,0 };
+	set[89] = { "jÄ™zyk","teatr","szkÅ‚o",6,1,false,1,0 };
+	set[90] = { "koÅ›ciÃ³Å‚","miÅ›","czoÅ‚o",5,1,false,1,0 };
 	set[91] = { "miecz","czajnik","ucho",15,1,false,1,0 };
-	set[92] = { "tron","list","z³oto",8,1,false,1,0 };
-	set[93] = { "ci¹gnik","fortepian","srebro",13,1,false,1,0 };
-	set[94] = { "ser","widelec","ŸdŸb³o",4,1,false,1,0 };
-	set[95] = { "wielb³¹d","mê¿czyzna","lotnisko",9,1,false,1,0 };
+	set[92] = { "tron","list","zÅ‚oto",8,1,false,1,0 };
+	set[93] = { "ciÄ…gnik","fortepian","srebro",13,1,false,1,0 };
+	set[94] = { "ser","widelec","ÅºdÅºbÅ‚o",4,1,false,1,0 };
+	set[95] = { "wielbÅ‚Ä…d","mÄ™Å¼czyzna","lotnisko",9,1,false,1,0 };
 	set[96] = { "gazeta","brama","olej",1,2,false,1,0 };
-	set[97] = { "góra","œciana","ziemniak",3,2,false,1,0 };
+	set[97] = { "gÃ³ra","Å›ciana","ziemniak",3,2,false,1,0 };
 	set[98] = { "kostka","woda","zamek",7,2,false,1,0 };
-	set[99] = { "lalka","stacja","w³ókno",7,2,false,1,0 };
-	set[100] = { "mapa","luka","artyku³",1,2,false,1,0 };
-	set[101] = { "rakieta","kasa","korzeñ",13,2,false,1,0 };
-	set[102] = { "wró¿ka","lina","kran",15,2,false,1,0 };
+	set[99] = { "lalka","stacja","wÅ‚Ã³kno",7,2,false,1,0 };
+	set[100] = { "mapa","luka","artykuÅ‚",1,2,false,1,0 };
+	set[101] = { "rakieta","kasa","korzeÅ„",13,2,false,1,0 };
+	set[102] = { "wrÃ³Å¼ka","lina","kran",15,2,false,1,0 };
 	set[103] = { "kobieta","zabawka","hotel",15,2,false,1,0 };
-	set[104] = { "krowa","g³owa","film",9,2,false,1,0 };
+	set[104] = { "krowa","gÅ‚owa","film",9,2,false,1,0 };
 	set[105] = { "flaga","kaczka","cukier",1,2,false,1,0 };
 	set[106] = { "kukurydza","orkiestra","sklep",4,2,false,1,0 };
-	set[107] = { "œwinia","koszula","klucz",9,2,false,1,0 };
-	set[108] = { "butelka","kawa","cia³o",1,2,false,1,0 };
-	set[109] = { "ryba","laska","wzgórze",9,2,false,1,0 };
-	set[110] = { "gwiazda","szafa","ramiê",3,2,false,1,0 };
-	set[111] = { "ksi¹¿ka","rzeka","wino",7,2,false,1,0 };
-	set[112] = { "wie¿a","torebka","biurko",5,2,false,1,0 };
-	set[113] = { "sieæ","mg³a","rondo",1,2,false,1,0 };
-	set[114] = { "bomba","szko³a","œwiat³o",15,2,false,1,0 };
-	set[115] = { "noga","fili¿anka","wiaderko",6,2,false,1,0 };
-	set[116] = { "rêka","herbata","jedzenie",6,2,false ,1,0 };
-	set[117] = { "noc","chata","bia³ko",3,2,false ,1,0 };
+	set[107] = { "Å›winia","koszula","klucz",9,2,false,1,0 };
+	set[108] = { "butelka","kawa","ciaÅ‚o",1,2,false,1,0 };
+	set[109] = { "ryba","laska","wzgÃ³rze",9,2,false,1,0 };
+	set[110] = { "gwiazda","szafa","ramiÄ™",3,2,false,1,0 };
+	set[111] = { "ksiÄ…Å¼ka","rzeka","wino",7,2,false,1,0 };
+	set[112] = { "wieÅ¼a","torebka","biurko",5,2,false,1,0 };
+	set[113] = { "sieÄ‡","mgÅ‚a","rondo",1,2,false,1,0 };
+	set[114] = { "bomba","szkoÅ‚a","Å›wiatÅ‚o",15,2,false,1,0 };
+	set[115] = { "noga","filiÅ¼anka","wiaderko",6,2,false,1,0 };
+	set[116] = { "rÄ™ka","herbata","jedzenie",6,2,false ,1,0 };
+	set[117] = { "noc","chata","biaÅ‚ko",3,2,false ,1,0 };
 	set[118] = { "czekolada","kuchnia","ziarno",4,2,false,1,0 };
 	set[119] = { "fabryka","bateria","ciastko",5,2,false ,1,0 };
-	set[120] = { "¿elazko","s³owo","tunel",1,3,false ,1,0 };
-	set[121] = { "jab³ko","wideo","kamieñ",4,3,false ,1,0 };
+	set[120] = { "Å¼elazko","sÅ‚owo","tunel",1,3,false ,1,0 };
+	set[121] = { "jabÅ‚ko","wideo","kamieÅ„",4,3,false ,1,0 };
 	set[122] = { "jezioro","kino","taniec",3,3,false ,1,0 };
-	set[123] = { "krzes³o","ciasto","wieniec",8,3,false,1,0 };
-	set[124] = { "skrzyd³o","b³oto","kot",6,3,false,1,0 };
-	set[125] = { "mas³o","szk³o","teatr",4,3,false,1,0 };
-	set[126] = { "okno","czo³o","list",8,3,false,1,0 };
+	set[123] = { "krzesÅ‚o","ciasto","wieniec",8,3,false,1,0 };
+	set[124] = { "skrzydÅ‚o","bÅ‚oto","kot",6,3,false,1,0 };
+	set[125] = { "masÅ‚o","szkÅ‚o","teatr",4,3,false,1,0 };
+	set[126] = { "okno","czoÅ‚o","list",8,3,false,1,0 };
 	set[127] = { "radio","ucho","czajnik",10,3,false,1,0 };
-	set[128] = { "akwarium","z³oto","miœ",1,3,false,1,0 };
+	set[128] = { "akwarium","zÅ‚oto","miÅ›",1,3,false,1,0 };
 	set[129] = { "lustro","srebro","fortepian",1,3,false,1,0 };
-	set[130] = { "kiwi","cia³o","widelec",4,3,false,1,0 };
-	set[131] = { "laboratorium","ciastko","mê¿czyzna",5,3,false,1,0 };
-	set[132] = { "serce","bia³ko","g³owa",11,3,false ,1,0 };
-	set[133] = { "miasto","wzgórze","laska",5,3,false ,1,0 };
-	set[134] = { "³ó¿ko","ramiê","rzeka",8,3,false ,1,0 };
+	set[130] = { "kiwi","ciaÅ‚o","widelec",4,3,false,1,0 };
+	set[131] = { "laboratorium","ciastko","mÄ™Å¼czyzna",5,3,false,1,0 };
+	set[132] = { "serce","biaÅ‚ko","gÅ‚owa",11,3,false ,1,0 };
+	set[133] = { "miasto","wzgÃ³rze","laska",5,3,false ,1,0 };
+	set[134] = { "Å‚Ã³Å¼ko","ramiÄ™","rzeka",8,3,false ,1,0 };
 	set[135] = { "kolano","wino","szafa",6,3,false ,1,0 };
-	set[136] = { "jajko","wiaderko","szko³a",4,3,false ,1,0 };
-	set[137] = { "ko³o","œwiat³o","torebka",11,3,false ,1,0 };
-	set[138] = { "miêso","biurko","fili¿anka",4,3,false ,1 ,0};
-	set[139] = { "oko","rondo","mg³a",6,3,false ,1,0 };
-	set[140] = { "s³oñce","jedzenie","herbata",3,3,false,1,0 };
-	set[141] = { "myd³o","ziarno","chata",1,3,false ,1,0 };
-	set[142] = { "wiêzienie","ŸdŸb³o","bateria",5,3,false,1,0 };
+	set[136] = { "jajko","wiaderko","szkoÅ‚a",4,3,false ,1,0 };
+	set[137] = { "koÅ‚o","Å›wiatÅ‚o","torebka",11,3,false ,1,0 };
+	set[138] = { "miÄ™so","biurko","filiÅ¼anka",4,3,false ,1 ,0 };
+	set[139] = { "oko","rondo","mgÅ‚a",6,3,false ,1,0 };
+	set[140] = { "sÅ‚oÅ„ce","jedzenie","herbata",3,3,false,1,0 };
+	set[141] = { "mydÅ‚o","ziarno","chata",1,3,false ,1,0 };
+	set[142] = { "wiÄ™zienie","ÅºdÅºbÅ‚o","bateria",5,3,false,1,0 };
 	set[143] = { "mleko","lotnisko","kuchnia",4,3,false ,1,0 };
 	set[144] = { "kalendarz","olej","brama",1,1,false, 0,2,2 };
-	set[145] = { "kapelusz","ziemniak","œciana",2,1,false,0,2,2 };
-	set[146] = { "but","artyku³","woda",2,1,false,0,2,2 };
+	set[145] = { "kapelusz","ziemniak","Å›ciana",2,1,false,0,2,2 };
+	set[146] = { "but","artykuÅ‚","woda",2,1,false,0,2,2 };
 	set[147] = { "kwiat","zamek","stacja",3,1,false,0,2,2 };
-	set[148] = { "ksiê¿yc","w³ókno","lina",3,1,false,0,2,2 };
-	set[149] = { "mózg","korzeñ","kasa",6,1,false,0,2,2 };
+	set[148] = { "ksiÄ™Å¼yc","wÅ‚Ã³kno","lina",3,1,false,0,2,2 };
+	set[149] = { "mÃ³zg","korzeÅ„","kasa",6,1,false,0,2,2 };
 	set[150] = { "obraz","cukier","luka",7,1,false,0,2,2 };
-	set[151] = { "ogieñ","hotel","zabawa",3,1,false,0,2,2 };
-	set[152] = { "stó³","film","kaczka",8,1,false,0,2,2 };
+	set[151] = { "ogieÅ„","hotel","zabawa",3,1,false,0,2,2 };
+	set[152] = { "stÃ³Å‚","film","kaczka",8,1,false,0,2,2 };
 	set[153] = { "telefon","sklep","kawa",10,1,false,0,2,2 };
 	set[154] = { "lew","kran","orkiestra",9,1,false,0,2,2 };
-	set[155] = { "cieñ","klucz","koszula",3,1,false,0,2,2 };
-	set[156] = { "kolczyk","tunel","s³owo",2,1,false,0,3,2 };
-	set[157] = { "rower","kamieñ","wideo",13,1,false,0 ,3,2 };
-	set[158] = { "bêben","wieniec","ciasto",12,1,false,0 ,3,2 };
-	set[159] = { "cmentarz","kot","b³oto",5,1,false,0,3,2 };
+	set[155] = { "cieÅ„","klucz","koszula",3,1,false,0,2,2 };
+	set[156] = { "kolczyk","tunel","sÅ‚owo",2,1,false,0,3,2 };
+	set[157] = { "rower","kamieÅ„","wideo",13,1,false,0 ,3,2 };
+	set[158] = { "bÄ™ben","wieniec","ciasto",12,1,false,0 ,3,2 };
+	set[159] = { "cmentarz","kot","bÅ‚oto",5,1,false,0,3,2 };
 	set[160] = { "guzik","taniec","kino",2,1,false,0,3,2 };
-	set[161] = { "jêzyk","teatr","szk³o",6,1,false,0,3,2 };
-	set[162] = { "koœció³","miœ","czo³o",5,1,false,0,3,2 };
+	set[161] = { "jÄ™zyk","teatr","szkÅ‚o",6,1,false,0,3,2 };
+	set[162] = { "koÅ›ciÃ³Å‚","miÅ›","czoÅ‚o",5,1,false,0,3,2 };
 	set[163] = { "miecz","czajnik","ucho",15,1,false,0,3,2 };
-	set[164] = { "tron","list","z³oto",8,1,false,0,3,2 };
-	set[165] = { "ci¹gnik","fortepian","srebro",13,1,false,0,3,2 };
-	set[166] = { "ser","widelec","ŸdŸb³o",4,1,false,0,3,2 };
-	set[167] = { "wielb³¹d","mê¿czyzna","lotnisko",9,1,false,0,3,2 };
+	set[164] = { "tron","list","zÅ‚oto",8,1,false,0,3,2 };
+	set[165] = { "ciÄ…gnik","fortepian","srebro",13,1,false,0,3,2 };
+	set[166] = { "ser","widelec","ÅºdÅºbÅ‚o",4,1,false,0,3,2 };
+	set[167] = { "wielbÅ‚Ä…d","mÄ™Å¼czyzna","lotnisko",9,1,false,0,3,2 };
 	set[168] = { "gazeta","brama","olej",1,2,false,0,1,2 };
-	set[169] = { "góra","œciana","ziemniak",3,2,false,0,1,2 };
+	set[169] = { "gÃ³ra","Å›ciana","ziemniak",3,2,false,0,1,2 };
 	set[170] = { "kostka","woda","zamek",7,2,false,0,1,2 };
-	set[171] = { "lalka","stacja","w³ókno",7,2,false,0,1,2 };
-	set[172] = { "mapa","luka","artyku³",1,2,false,0,1,2 };
-	set[173] = { "rakieta","kasa","korzeñ",13,2,false,0,1,2 };
-	set[174] = { "wró¿ka","lina","kran",15,2,false,0,1,2 };
+	set[171] = { "lalka","stacja","wÅ‚Ã³kno",7,2,false,0,1,2 };
+	set[172] = { "mapa","luka","artykuÅ‚",1,2,false,0,1,2 };
+	set[173] = { "rakieta","kasa","korzeÅ„",13,2,false,0,1,2 };
+	set[174] = { "wrÃ³Å¼ka","lina","kran",15,2,false,0,1,2 };
 	set[175] = { "kobieta","zabawka","hotel",15,2,false,0,1,2 };
-	set[176] = { "krowa","g³owa","film",9,2,false,0,1,2 };
+	set[176] = { "krowa","gÅ‚owa","film",9,2,false,0,1,2 };
 	set[177] = { "flaga","kaczka","cukier",1,2,false,0,1,2 };
 	set[178] = { "kukurydza","orkiestra","sklep",4,2,false,0,1,2 };
-	set[179] = { "œwinia","koszula","klucz",9,2,false,0,1,2 };
-	set[180] = { "butelka","kawa","cia³o",1,2,false,0,3,2 };
-	set[181] = { "ryba","laska","wzgórze",9,2,false,0,3,2 };
-	set[182] = { "gwiazda","szafa","ramiê",3,2,false,0,3,2 };
-	set[183] = { "ksi¹¿ka","rzeka","wino",7,2,false,0,3,2 };
-	set[184] = { "wie¿a","torebka","biurko",5,2,false,0,3,2 };
-	set[185] = { "sieæ","mg³a","rondo",1,2,false,0,3,2 };
-	set[186] = { "bomba","szko³a","œwiat³o",15,2,false,0,3,2 };
-	set[187] = { "noga","fili¿anka","wiaderko",6,2,false,0,3,2 };
-	set[188] = { "rêka","herbata","jedzenie",6,2,false ,0,3,2 };
-	set[189] = { "noc","chata","bia³ko",3,2,false ,0,3,2 };
+	set[179] = { "Å›winia","koszula","klucz",9,2,false,0,1,2 };
+	set[180] = { "butelka","kawa","ciaÅ‚o",1,2,false,0,3,2 };
+	set[181] = { "ryba","laska","wzgÃ³rze",9,2,false,0,3,2 };
+	set[182] = { "gwiazda","szafa","ramiÄ™",3,2,false,0,3,2 };
+	set[183] = { "ksiÄ…Å¼ka","rzeka","wino",7,2,false,0,3,2 };
+	set[184] = { "wieÅ¼a","torebka","biurko",5,2,false,0,3,2 };
+	set[185] = { "sieÄ‡","mgÅ‚a","rondo",1,2,false,0,3,2 };
+	set[186] = { "bomba","szkoÅ‚a","Å›wiatÅ‚o",15,2,false,0,3,2 };
+	set[187] = { "noga","filiÅ¼anka","wiaderko",6,2,false,0,3,2 };
+	set[188] = { "rÄ™ka","herbata","jedzenie",6,2,false ,0,3,2 };
+	set[189] = { "noc","chata","biaÅ‚ko",3,2,false ,0,3,2 };
 	set[190] = { "czekolada","kuchnia","ziarno",4,2,false,0,3,2 };
 	set[191] = { "fabryka","bateria","ciastko",5,2,false ,0,3,2 };
-	set[192] = { "¿elazko","s³owo","tunel",1,3,false ,0,1,2 };
-	set[193] = { "jab³ko","wideo","kamieñ",4,3,false ,0,1,2 };
+	set[192] = { "Å¼elazko","sÅ‚owo","tunel",1,3,false ,0,1,2 };
+	set[193] = { "jabÅ‚ko","wideo","kamieÅ„",4,3,false ,0,1,2 };
 	set[194] = { "jezioro","kino","taniec",3,3,false ,0,1,2 };
-	set[195] = { "krzes³o","ciasto","wieniec",8,3,false,0,1,2 };
-	set[196] = { "skrzyd³o","b³oto","kot",6,3,false,0,1,2 };
-	set[197] = { "mas³o","szk³o","teatr",4,3,false,0,1,2 };
-	set[198] = { "okno","czo³o","list",8,3,false,0,1,2 };
+	set[195] = { "krzesÅ‚o","ciasto","wieniec",8,3,false,0,1,2 };
+	set[196] = { "skrzydÅ‚o","bÅ‚oto","kot",6,3,false,0,1,2 };
+	set[197] = { "masÅ‚o","szkÅ‚o","teatr",4,3,false,0,1,2 };
+	set[198] = { "okno","czoÅ‚o","list",8,3,false,0,1,2 };
 	set[199] = { "radio","ucho","czajnik",10,3,false,0,1,2 };
-	set[200] = { "akwarium","z³oto","miœ",1,3,false,0,1,2 };
+	set[200] = { "akwarium","zÅ‚oto","miÅ›",1,3,false,0,1,2 };
 	set[201] = { "lustro","srebro","fortepian",1,3,false,0,1,2 };
-	set[202] = { "kiwi","cia³o","widelec",4,3,false,0,1,2 };
-	set[203] = { "laboratorium","ciastko","mê¿czyzna",5,3,false,0,1,2 };
-	set[204] = { "serce","bia³ko","g³owa",11,3,false ,0,2,2 };
-	set[205] = { "miasto","wzgórze","laska",5,3,false ,0,2,2 };
-	set[206] = { "³ó¿ko","ramiê","rzeka",8,3,false ,0,2,2 };
+	set[202] = { "kiwi","ciaÅ‚o","widelec",4,3,false,0,1,2 };
+	set[203] = { "laboratorium","ciastko","mÄ™Å¼czyzna",5,3,false,0,1,2 };
+	set[204] = { "serce","biaÅ‚ko","gÅ‚owa",11,3,false ,0,2,2 };
+	set[205] = { "miasto","wzgÃ³rze","laska",5,3,false ,0,2,2 };
+	set[206] = { "Å‚Ã³Å¼ko","ramiÄ™","rzeka",8,3,false ,0,2,2 };
 	set[207] = { "kolano","wino","szafa",6,3,false ,0,2,2 };
-	set[208] = { "jajko","wiaderko","szko³a",4,3,false ,0,2,2 };
-	set[209] = { "ko³o","œwiat³o","torebka",11,3,false ,0,2,2 };
-	set[210] = { "miêso","biurko","fili¿anka",4,3,false ,0,2,2 };
-	set[211] = { "oko","rondo","mg³a",6,3,false ,0,2,2 };
-	set[212] = { "s³oñce","jedzenie","herbata",3,3,false,0,2,2 };
-	set[213] = { "myd³o","ziarno","chata",1,3,false ,0,2,2 };
-	set[214] = { "wiêzienie","ŸdŸb³o","bateria",5,3,false,0,2,2 };
+	set[208] = { "jajko","wiaderko","szkoÅ‚a",4,3,false ,0,2,2 };
+	set[209] = { "koÅ‚o","Å›wiatÅ‚o","torebka",11,3,false ,0,2,2 };
+	set[210] = { "miÄ™so","biurko","filiÅ¼anka",4,3,false ,0,2,2 };
+	set[211] = { "oko","rondo","mgÅ‚a",6,3,false ,0,2,2 };
+	set[212] = { "sÅ‚oÅ„ce","jedzenie","herbata",3,3,false,0,2,2 };
+	set[213] = { "mydÅ‚o","ziarno","chata",1,3,false ,0,2,2 };
+	set[214] = { "wiÄ™zienie","ÅºdÅºbÅ‚o","bateria",5,3,false,0,2,2 };
 	set[215] = { "mleko","lotnisko","kuchnia",4,3,false ,0,2,2 };
 	set[216] = { "kalendarz","olej","brama",1,1,false, 1,0,2 };
-	set[217] = { "kapelusz","ziemniak","œciana",2,1,false,1,0,2 };
-	set[218] = { "but","artyku³","woda",2,1,false,1,0,2 };
+	set[217] = { "kapelusz","ziemniak","Å›ciana",2,1,false,1,0,2 };
+	set[218] = { "but","artykuÅ‚","woda",2,1,false,1,0,2 };
 	set[219] = { "kwiat","zamek","stacja",3,1,false,1,0,2 };
-	set[220] = { "ksiê¿yc","w³ókno","lina",3,1,false,1,0,2 };
-	set[221] = { "mózg","korzeñ","kasa",6,1,false,1,0,2 };
+	set[220] = { "ksiÄ™Å¼yc","wÅ‚Ã³kno","lina",3,1,false,1,0,2 };
+	set[221] = { "mÃ³zg","korzeÅ„","kasa",6,1,false,1,0,2 };
 	set[222] = { "obraz","cukier","luka",7,1,false,1,0,2 };
-	set[223] = { "ogieñ","hotel","zabawa",3,1,false,1,0,2 };
-	set[224] = { "stó³","film","kaczka",8,1,false,1,0,2 };
+	set[223] = { "ogieÅ„","hotel","zabawa",3,1,false,1,0,2 };
+	set[224] = { "stÃ³Å‚","film","kaczka",8,1,false,1,0,2 };
 	set[225] = { "telefon","sklep","kawa",10,1,false,1,0,2 };
 	set[226] = { "lew","kran","orkiestra",9,1,false,1,0,2 };
-	set[227] = { "cieñ","klucz","koszula",3,1,false,1,0,2 };
-	set[228] = { "kolczyk","tunel","s³owo",2,1,false,1,0,2 };
-	set[229] = { "rower","kamieñ","wideo",13,1,false,1,0,2 };
-	set[230] = { "bêben","wieniec","ciasto",12,1,false,1,0,2 };
-	set[231] = { "cmentarz","kot","b³oto",5,1,false,1,0,2 };
+	set[227] = { "cieÅ„","klucz","koszula",3,1,false,1,0,2 };
+	set[228] = { "kolczyk","tunel","sÅ‚owo",2,1,false,1,0,2 };
+	set[229] = { "rower","kamieÅ„","wideo",13,1,false,1,0,2 };
+	set[230] = { "bÄ™ben","wieniec","ciasto",12,1,false,1,0,2 };
+	set[231] = { "cmentarz","kot","bÅ‚oto",5,1,false,1,0,2 };
 	set[232] = { "guzik","taniec","kino",2,1,false,1,0,2 };
-	set[233] = { "jêzyk","teatr","szk³o",6,1,false,1,0,2 };
-	set[234] = { "koœció³","miœ","czo³o",5,1,false,1,0,2 };
+	set[233] = { "jÄ™zyk","teatr","szkÅ‚o",6,1,false,1,0,2 };
+	set[234] = { "koÅ›ciÃ³Å‚","miÅ›","czoÅ‚o",5,1,false,1,0,2 };
 	set[235] = { "miecz","czajnik","ucho",15,1,false,1,0,2 };
-	set[236] = { "tron","list","z³oto",8,1,false,1,0,2 };
-	set[237] = { "ci¹gnik","fortepian","srebro",13,1,false,1,0,2 };
-	set[238] = { "ser","widelec","ŸdŸb³o",4,1,false,1,0,2 };
-	set[239] = { "wielb³¹d","mê¿czyzna","lotnisko",9,1,false,1,0,2 };
+	set[236] = { "tron","list","zÅ‚oto",8,1,false,1,0,2 };
+	set[237] = { "ciÄ…gnik","fortepian","srebro",13,1,false,1,0,2 };
+	set[238] = { "ser","widelec","ÅºdÅºbÅ‚o",4,1,false,1,0,2 };
+	set[239] = { "wielbÅ‚Ä…d","mÄ™Å¼czyzna","lotnisko",9,1,false,1,0,2 };
 	set[240] = { "gazeta","brama","olej",1,2,false,1,0,2 };
-	set[241] = { "góra","œciana","ziemniak",3,2,false,1,0,2 };
+	set[241] = { "gÃ³ra","Å›ciana","ziemniak",3,2,false,1,0,2 };
 	set[242] = { "kostka","woda","zamek",7,2,false,1,0,2 };
-	set[243] = { "lalka","stacja","w³ókno",7,2,false,1,0,2 };
-	set[244] = { "mapa","luka","artyku³",1,2,false,1,0,2 };
-	set[245] = { "rakieta","kasa","korzeñ",13,2,false,1,0,2 };
-	set[246] = { "wró¿ka","lina","kran",15,2,false,1,0,2 };
+	set[243] = { "lalka","stacja","wÅ‚Ã³kno",7,2,false,1,0,2 };
+	set[244] = { "mapa","luka","artykuÅ‚",1,2,false,1,0,2 };
+	set[245] = { "rakieta","kasa","korzeÅ„",13,2,false,1,0,2 };
+	set[246] = { "wrÃ³Å¼ka","lina","kran",15,2,false,1,0,2 };
 	set[247] = { "kobieta","zabawka","hotel",15,2,false,1,0,2 };
-	set[248] = { "krowa","g³owa","film",9,2,false,1,0,2 };
+	set[248] = { "krowa","gÅ‚owa","film",9,2,false,1,0,2 };
 	set[249] = { "flaga","kaczka","cukier",1,2,false,1,0,2 };
 	set[250] = { "kukurydza","orkiestra","sklep",4,2,false,1,0,2 };
-	set[251] = { "œwinia","koszula","klucz",9,2,false,1,0,2 };
-	set[252] = { "butelka","kawa","cia³o",1,2,false,1,0,2 };
-	set[253] = { "ryba","laska","wzgórze",9,2,false,1,0,2 };
-	set[254] = { "gwiazda","szafa","ramiê",3,2,false,1,0 ,2};
-	set[255] = { "ksi¹¿ka","rzeka","wino",7,2,false,1,0,2 };
-	set[256] = { "wie¿a","torebka","biurko",5,2,false,1,0,2 };
-	set[257] = { "sieæ","mg³a","rondo",1,2,false,1,0,2 };
-	set[258] = { "bomba","szko³a","œwiat³o",15,2,false,1,0,2 };
-	set[259] = { "noga","fili¿anka","wiaderko",6,2,false,1,0,2 };
-	set[260] = { "rêka","herbata","jedzenie",6,2,false ,1,0,2 };
-	set[261] = { "noc","chata","bia³ko",3,2,false ,1,0,2 };
+	set[251] = { "Å›winia","koszula","klucz",9,2,false,1,0,2 };
+	set[252] = { "butelka","kawa","ciaÅ‚o",1,2,false,1,0,2 };
+	set[253] = { "ryba","laska","wzgÃ³rze",9,2,false,1,0,2 };
+	set[254] = { "gwiazda","szafa","ramiÄ™",3,2,false,1,0 ,2 };
+	set[255] = { "ksiÄ…Å¼ka","rzeka","wino",7,2,false,1,0,2 };
+	set[256] = { "wieÅ¼a","torebka","biurko",5,2,false,1,0,2 };
+	set[257] = { "sieÄ‡","mgÅ‚a","rondo",1,2,false,1,0,2 };
+	set[258] = { "bomba","szkoÅ‚a","Å›wiatÅ‚o",15,2,false,1,0,2 };
+	set[259] = { "noga","filiÅ¼anka","wiaderko",6,2,false,1,0,2 };
+	set[260] = { "rÄ™ka","herbata","jedzenie",6,2,false ,1,0,2 };
+	set[261] = { "noc","chata","biaÅ‚ko",3,2,false ,1,0,2 };
 	set[262] = { "czekolada","kuchnia","ziarno",4,2,false,1,0,2 };
 	set[263] = { "fabryka","bateria","ciastko",5,2,false ,1,0,2 };
-	set[264] = { "¿elazko","s³owo","tunel",1,3,false ,1,0,2 };
-	set[265] = { "jab³ko","wideo","kamieñ",4,3,false ,1,0,2 };
+	set[264] = { "Å¼elazko","sÅ‚owo","tunel",1,3,false ,1,0,2 };
+	set[265] = { "jabÅ‚ko","wideo","kamieÅ„",4,3,false ,1,0,2 };
 	set[266] = { "jezioro","kino","taniec",3,3,false ,1,0,2 };
-	set[267] = { "krzes³o","ciasto","wieniec",8,3,false,1,0,2 };
-	set[268] = { "skrzyd³o","b³oto","kot",6,3,false,1,0,2 };
-	set[269] = { "mas³o","szk³o","teatr",4,3,false,1,0,2 };
-	set[270] = { "okno","czo³o","list",8,3,false,1,0,2 };
+	set[267] = { "krzesÅ‚o","ciasto","wieniec",8,3,false,1,0,2 };
+	set[268] = { "skrzydÅ‚o","bÅ‚oto","kot",6,3,false,1,0,2 };
+	set[269] = { "masÅ‚o","szkÅ‚o","teatr",4,3,false,1,0,2 };
+	set[270] = { "okno","czoÅ‚o","list",8,3,false,1,0,2 };
 	set[271] = { "radio","ucho","czajnik",10,3,false,1,0,2 };
-	set[272] = { "akwarium","z³oto","miœ",1,3,false,1,0,2 };
+	set[272] = { "akwarium","zÅ‚oto","miÅ›",1,3,false,1,0,2 };
 	set[273] = { "lustro","srebro","fortepian",1,3,false,1,0,2 };
-	set[274] = { "kiwi","cia³o","widelec",4,3,false,1,0,2 };
-	set[275] = { "laboratorium","ciastko","mê¿czyzna",5,3,false,1,0,2 };
-	set[276] = { "serce","bia³ko","g³owa",11,3,false ,1,0,2 };
-	set[277] = { "miasto","wzgórze","laska",5,3,false ,1,0,2 };
-	set[278] = { "³ó¿ko","ramiê","rzeka",8,3,false ,1,0,2 };
+	set[274] = { "kiwi","ciaÅ‚o","widelec",4,3,false,1,0,2 };
+	set[275] = { "laboratorium","ciastko","mÄ™Å¼czyzna",5,3,false,1,0,2 };
+	set[276] = { "serce","biaÅ‚ko","gÅ‚owa",11,3,false ,1,0,2 };
+	set[277] = { "miasto","wzgÃ³rze","laska",5,3,false ,1,0,2 };
+	set[278] = { "Å‚Ã³Å¼ko","ramiÄ™","rzeka",8,3,false ,1,0,2 };
 	set[279] = { "kolano","wino","szafa",6,3,false ,1,0,2 };
-	set[280] = { "jajko","wiaderko","szko³a",4,3,false ,1,0,2 };
-	set[281] = { "ko³o","œwiat³o","torebka",11,3,false ,1,0,2 };
-	set[282] = { "miêso","biurko","fili¿anka",4,3,false ,1 ,0,2 };
-	set[283] = { "oko","rondo","mg³a",6,3,false ,1,0,2 };
-	set[284] = { "s³oñce","jedzenie","herbata",3,3,false,1,0,2 };
-	set[285] = { "myd³o","ziarno","chata",1,3,false ,1,0,2 };
-	set[286] = { "wiêzienie","ŸdŸb³o","bateria",5,3,false,1,0,2 };
+	set[280] = { "jajko","wiaderko","szkoÅ‚a",4,3,false ,1,0,2 };
+	set[281] = { "koÅ‚o","Å›wiatÅ‚o","torebka",11,3,false ,1,0,2 };
+	set[282] = { "miÄ™so","biurko","filiÅ¼anka",4,3,false ,1 ,0,2 };
+	set[283] = { "oko","rondo","mgÅ‚a",6,3,false ,1,0,2 };
+	set[284] = { "sÅ‚oÅ„ce","jedzenie","herbata",3,3,false,1,0,2 };
+	set[285] = { "mydÅ‚o","ziarno","chata",1,3,false ,1,0,2 };
+	set[286] = { "wiÄ™zienie","ÅºdÅºbÅ‚o","bateria",5,3,false,1,0,2 };
 	set[287] = { "mleko","lotnisko","kuchnia",4,3,false ,1,0,2 };
 	return set;
 }
-void wypisz_zbior(A set[],ostream &out,int rozmiar)
+void wypisz_zbior(A set[], ostream& out, int rozmiar)
 {
 	for (int i = 0; i < rozmiar; i++)
 	{
 		if (set[i].rodzaj == 1 && set[i].rodzaj_cong == 0)
-			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_pasujacy << " " << set[i].kategoria << " MM " << " "<<set[i].ordinal<<endl;
+			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_pasujacy << " " << set[i].kategoria << " MM " << " " << set[i].ordinal << endl;
 		else if (set[i].rodzaj == 2 && set[i].rodzaj_cong == 0)
 			out << i + 1 << ". " << set[i].slowo << " " << set[i].congruent_pasujacy << " " << set[i].kategoria << " FF " << " " << set[i].ordinal << endl;
 		else if (set[i].rodzaj == 3 && set[i].rodzaj_cong == 0)
@@ -344,7 +344,7 @@ void Bare_noun_list()
 {
 	cout << "Generating list for bare noun task." << endl;
 	A* set = new A[R];
-	set=utworz_Zbior();													//create the set with all the words
+	set = utworz_Zbior();													//create the set with all the words
 	bool do_list = true;
 	A* listaA = new A[R];
 	int ile_MM = 0;
@@ -364,7 +364,7 @@ void Bare_noun_list()
 		unsigned seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
 		srand(seed);														// Reseed the random number generator
 		bool losowalne = true;
-		cout <<endl<< "Start the draw" << endl;
+		cout << endl << "Start the draw" << endl;
 		cout << seed << endl;
 		A* lista = new A[R];
 		for (int i = 0; i < R; i++)
@@ -386,7 +386,7 @@ void Bare_noun_list()
 				chrono::duration<double> time_span = chrono::duration_cast<chrono::duration<double>>(end - start);
 				if (time_span.count() > 1.33)									//if nothing is drawn for 2 seconds, break the loop and reset the list
 				{
-					cout << "Draw taken too long. Last position filled in list was: "<< i << "/" << R << endl;			//debugging help
+					cout << "Draw taken too long. Last position filled in list was: " << i << "/" << R << endl;			//debugging help
 					if (!half)
 					{
 						cout << "MM: " << ile_MM << " MF: " << ile_MF << " MN: " << ile_MN << " FF: " << ile_FF << " FN: " << ile_FN << " FM: " << ile_FM << " NN: " << ile_NN << " NM: " << ile_NM << " NF: " << ile_NF << endl;	//debugging help
@@ -437,7 +437,7 @@ void Bare_noun_list()
 						}
 						half = true;
 					}
-					if (set[los].used==2)
+					if (set[los].used == 2)
 						continue;
 					else if (lista[i - 2].congruent && lista[i - 1].congruent && set[los].congruent)
 						continue;
@@ -545,7 +545,7 @@ void Bare_noun_list()
 						continue;
 					else if (lista[i - 1].slowo.at(0) == set[los].slowo.at(0))
 						continue;
-					else if (lista[i-2].kategoria == set[los].kategoria || lista[i-1].kategoria == set[los].kategoria)
+					else if (lista[i - 2].kategoria == set[los].kategoria || lista[i - 1].kategoria == set[los].kategoria)
 						continue;
 					else
 					{
@@ -620,7 +620,7 @@ void Bare_noun_list()
 						continue;
 					else if (lista[i - 1].slowo.at(0) == set[los].slowo.at(0))
 						continue;
-					else if(lista[i-1].kategoria==set[los].kategoria)
+					else if (lista[i - 1].kategoria == set[los].kategoria)
 						continue;
 					else
 					{
@@ -680,20 +680,20 @@ void Bare_noun_list()
 		}
 	}
 	cout << "Word   |   Distractor   |   Category   |   Type   |   Ordinal" << endl << endl << endl;
-	wypisz_zbior(listaA,cout,R);										//print the list
-	A* listaB= new A[R];
+	wypisz_zbior(listaA, cout, R);										//print the list
+	A* listaB = new A[R];
 	for (int i = 0; i < R; i++)										//create the reversed the list
 	{
-		listaB[R-i-1] = listaA[i];
+		listaB[R - i - 1] = listaA[i];
 	}
 	cout << endl << endl << endl << "Printing reversed list" << endl;
-	wypisz_zbior(listaB,cout,R);											//print the reversed list
+	wypisz_zbior(listaB, cout, R);											//print the reversed list
 	fstream out;
 	out.open("lists_bare_noun.txt", ios::out);									//save the list to a file
 	out << "Word   |   Distractor   |   Category   |   Type   |   Ordinal" << endl << endl << endl;
-	wypisz_zbior(listaA, out,R);
+	wypisz_zbior(listaA, out, R);
 	out << "\n\n\nReversed list: " << endl;
-	wypisz_zbior(listaB, out,R);
+	wypisz_zbior(listaB, out, R);
 	out.close();
 	delete[]listaA;
 	delete[]listaB;
@@ -707,10 +707,10 @@ void Bare_noun_list()
 void noun_phrase_list()
 {
 	cout << "\nGenerating list for noun phrase task." << endl;
-	A* set = new A[2*R];
+	A* set = new A[2 * R];
 	set = utworz_Zbior();													//create the set with all the words
 	bool do_list = true;
-	A* listaA = new A[2*R];
+	A* listaA = new A[2 * R];
 	int ile_MM = 0;
 	int ile_MF = 0;
 	int ile_MN = 0;
@@ -734,8 +734,8 @@ void noun_phrase_list()
 		bool losowalne = true;
 		cout << endl << "Start the draw" << endl;
 		cout << seed << endl;
-		A* lista = new A[2*R];
-		for (int i = 0; i < 2*R; i++)
+		A* lista = new A[2 * R];
+		for (int i = 0; i < 2 * R; i++)
 		{
 			lista[i].used = 0;
 		}
@@ -748,11 +748,11 @@ void noun_phrase_list()
 				break;
 			}
 			auto start = std::chrono::high_resolution_clock::now();			//start the timer between draws
-			while (lista[i].used ==0)
+			while (lista[i].used == 0)
 			{
 				auto end = std::chrono::high_resolution_clock::now();
 				chrono::duration<double> time_span = chrono::duration_cast<chrono::duration<double>>(end - start);
-				if ((time_span.count() > 1.33 && !Q2) || (Q2 && time_span.count()>3.0))						//if nothing is drawn for 2 seconds, break the loop and reset the list
+				if ((time_span.count() > 1.33 && !Q2) || (Q2 && time_span.count() > 3.0))						//if nothing is drawn for 2 seconds, break the loop and reset the list
 				{
 					cout << "Draw taken too long. Last position filled in list was: " << i << "/" << 2 * R << endl;			//debugging help
 					cout << "Not fully filled quarter stats:" << endl;
@@ -771,13 +771,13 @@ void noun_phrase_list()
 					ile_2 = 0;
 					for (int j = 0; j < 2 * R; j++)
 					{													//reset the used flag
-							set[j].used = 0;
+						set[j].used = 0;
 					}
 					break;
 				}
-				if (i==0 && Q1)
+				if (i == 0 && Q1)
 				{
-					for (int i = 0; i < 2*R; i++)
+					for (int i = 0; i < 2 * R; i++)
 					{
 						lista[i] = saved_list[i];
 						set[i].used = used_flags[i];
@@ -812,16 +812,16 @@ void noun_phrase_list()
 					{
 						set[los].used = 4;
 						set[los + R / 2].used = 1;
-						set[los + R].used = 1;
+						set[los + R].used = 2;
 						set[los + 3 * R / 2].used = 1;
 						lista[i] = set[los];
 					}
-					else if(los<144)
+					else if (los < 144)
 					{
 						set[los].used = 4;
 						set[los - R / 2].used = 1;
 						set[los + R / 2].used = 1;
-						set[los + R].used = 1;
+						set[los + R].used = 2;
 						lista[i] = set[los];
 					}
 					else if (los < 216)
@@ -829,18 +829,18 @@ void noun_phrase_list()
 						set[los].used = 4;
 						set[los - R / 2].used = 1;
 						set[los + R / 2].used = 1;
-						set[los - R].used = 1;
+						set[los - R].used = 2;
 						lista[i] = set[los];
 					}
 					else
 					{
 						set[los].used = 4;
 						set[los - R / 2].used = 1;
-						set[los - R].used = 1;
+						set[los - R].used = 2;
 						set[los - 3 * R / 2].used = 1;
 						lista[i] = set[los];
 					}
-					set[los].ordinal==1 ? ile_1++ : ile_2++;
+					set[los].ordinal == 1 ? ile_1++ : ile_2++;
 					if (set[los].rodzaj == 1 && set[los].rodzaj_cong == 0)
 						ile_MM++;
 					else if (set[los].rodzaj == 1 && set[los].rodzaj_cong == 2)
@@ -872,7 +872,7 @@ void noun_phrase_list()
 					{
 						set[los].used = 4;
 						set[los + R / 2].used = 1;
-						set[los + R].used = 1;
+						set[los + R].used = 2;
 						set[los + 3 * R / 2].used = 1;
 						lista[i] = set[los];
 					}
@@ -881,7 +881,7 @@ void noun_phrase_list()
 						set[los].used = 4;
 						set[los - R / 2].used = 1;
 						set[los + R / 2].used = 1;
-						set[los + R].used = 1;
+						set[los + R].used = 2;
 						lista[i] = set[los];
 					}
 					else if (los < 216)
@@ -889,14 +889,14 @@ void noun_phrase_list()
 						set[los].used = 4;
 						set[los - R / 2].used = 1;
 						set[los + R / 2].used = 1;
-						set[los - R].used = 1;
+						set[los - R].used = 2;
 						lista[i] = set[los];
 					}
 					else
 					{
 						set[los].used = 4;
 						set[los - R / 2].used = 1;
-						set[los - R].used = 1;
+						set[los - R].used = 2;
 						set[los - 3 * R / 2].used = 1;
 						lista[i] = set[los];
 					}
@@ -944,7 +944,7 @@ void noun_phrase_list()
 					{
 						set[los].used = 4;
 						set[los + R / 2].used = 1;
-						set[los + R].used = 1;
+						set[los + R].used = 2;
 						set[los + 3 * R / 2].used = 1;
 						lista[i] = set[los];
 					}
@@ -953,7 +953,7 @@ void noun_phrase_list()
 						set[los].used = 4;
 						set[los - R / 2].used = 1;
 						set[los + R / 2].used = 1;
-						set[los + R].used = 1;
+						set[los + R].used = 2;
 						lista[i] = set[los];
 					}
 					else if (los < 216)
@@ -961,14 +961,14 @@ void noun_phrase_list()
 						set[los].used = 4;
 						set[los - R / 2].used = 1;
 						set[los + R / 2].used = 1;
-						set[los - R].used = 1;
+						set[los - R].used = 2;
 						lista[i] = set[los];
 					}
 					else
 					{
 						set[los].used = 4;
 						set[los - R / 2].used = 1;
-						set[los - R].used = 1;
+						set[los - R].used = 2;
 						set[los - 3 * R / 2].used = 1;
 						lista[i] = set[los];
 					}
@@ -1038,7 +1038,7 @@ void noun_phrase_list()
 					{
 						set[los].used = 4;
 						set[los + R / 2].used = 1;
-						set[los + R].used = 1;
+						set[los + R].used = 2;
 						set[los + 3 * R / 2].used = 1;
 						lista[i] = set[los];
 					}
@@ -1047,7 +1047,7 @@ void noun_phrase_list()
 						set[los].used = 4;
 						set[los - R / 2].used = 1;
 						set[los + R / 2].used = 1;
-						set[los + R].used = 1;
+						set[los + R].used = 2;
 						lista[i] = set[los];
 					}
 					else if (los < 216)
@@ -1055,14 +1055,14 @@ void noun_phrase_list()
 						set[los].used = 4;
 						set[los - R / 2].used = 1;
 						set[los + R / 2].used = 1;
-						set[los - R].used = 1;
+						set[los - R].used = 2;
 						lista[i] = set[los];
 					}
 					else
 					{
 						set[los].used = 4;
 						set[los - R / 2].used = 1;
-						set[los - R].used = 1;
+						set[los - R].used = 2;
 						set[los - 3 * R / 2].used = 1;
 						lista[i] = set[los];
 					}
@@ -1111,7 +1111,7 @@ void noun_phrase_list()
 						}
 						Q1 = true;
 					}
-					if (set[los].used!=1)
+					if (set[los].used > 1)
 						continue;
 					else if (lista[i - 2].congruent && lista[i - 1].congruent && set[los].congruent)
 						continue;
@@ -1154,9 +1154,9 @@ void noun_phrase_list()
 					if (los < 72)
 					{
 						set[los].used = 4;
-						if(set[los + R / 2].used==1) set[los + R / 2].used = 2;
-						if(set[los + R].used==1) set[los + R].used = 2;
-						if(set[los + 3 * R / 2].used==1) set[los + 3 * R / 2].used = 2;
+						if (set[los + R / 2].used == 1) set[los + R / 2].used = 2;
+						if (set[los + R].used == 1) set[los + R].used = 2;
+						if (set[los + 3 * R / 2].used == 1) set[los + 3 * R / 2].used = 2;
 						lista[i] = set[los];
 					}
 					else if (los < 144)
@@ -1164,23 +1164,23 @@ void noun_phrase_list()
 						set[los].used = 4;
 						if (set[los + R / 2].used == 1) set[los + R / 2].used = 2;
 						if (set[los + R].used == 1) set[los + R].used = 2;
-						if (set[los - R / 2].used == 1) set[los + 3 * R / 2].used = 2;
+						if (set[los - R / 2].used == 1) set[los - R / 2].used = 2;
 						lista[i] = set[los];
 					}
 					else if (los < 216)
 					{
 						set[los].used = 4;
 						if (set[los + R / 2].used == 1) set[los + R / 2].used = 2;
-						if (set[los - R].used == 1) set[los + R].used = 2;
-						if (set[los - R / 2].used == 1) set[los + 3 * R / 2].used = 2;
+						if (set[los - R].used == 1) set[los - R].used = 2;
+						if (set[los - R / 2].used == 1) set[los - R / 2].used = 2;
 						lista[i] = set[los];
 					}
 					else
 					{
 						set[los].used = 4;
-						if (set[los - R / 2].used == 1) set[los + R / 2].used = 2;
-						if (set[los - R].used == 1) set[los + R].used = 2;
-						if (set[los - 3 * R / 2].used == 1) set[los + 3 * R / 2].used = 2;
+						if (set[los - R / 2].used == 1) set[los - R / 2].used = 2;
+						if (set[los - R].used == 1) set[los - R].used = 2;
+						if (set[los - 3 * R / 2].used == 1) set[los - 3 * R / 2].used = 2;
 						lista[i] = set[los];
 					}
 					set[los].ordinal == 1 ? ile_1++ : ile_2++;
@@ -1220,7 +1220,6 @@ void noun_phrase_list()
 						ile_NF = 0;
 						ile_1 = 0;
 						ile_2 = 0;
-						wypisz_zbior(lista,cout, R);
 						cout << "Saving progress" << endl;
 						for (int j = 0; j < 2 * R; j++)
 						{
@@ -1230,7 +1229,7 @@ void noun_phrase_list()
 						Q1 = false;
 						Q2 = true;
 					}
-					if (set[los].used !=2)
+					if (set[los].used > 2)
 						continue;
 					else if (lista[i - 2].congruent && lista[i - 1].congruent && set[los].congruent)
 						continue;
@@ -1283,23 +1282,23 @@ void noun_phrase_list()
 						set[los].used = 4;
 						if (set[los + R / 2].used == 2) set[los + R / 2].used = 3;
 						if (set[los + R].used == 2) set[los + R].used = 3;
-						if (set[los - R / 2].used == 2) set[los + 3 * R / 2].used = 3;
+						if (set[los - R / 2].used == 2) set[los - R / 2].used = 3;
 						lista[i] = set[los];
 					}
 					else if (los < 216)
 					{
 						set[los].used = 4;
 						if (set[los + R / 2].used == 2) set[los + R / 2].used = 3;
-						if (set[los - R].used == 2) set[los + R].used = 3;
-						if (set[los - R / 2].used == 2) set[los + 3 * R / 2].used = 3;
+						if (set[los - R].used == 2) set[los - R].used = 3;
+						if (set[los - R / 2].used == 2) set[los - R / 2].used = 3;
 						lista[i] = set[los];
 					}
 					else
 					{
 						set[los].used = 4;
-						if (set[los - R / 2].used == 2) set[los + R / 2].used = 3;
-						if (set[los - R].used == 2) set[los + R].used = 3;
-						if (set[los - 3 * R / 2].used == 2) set[los + 3 * R / 2].used = 3;
+						if (set[los - R / 2].used == 2) set[los - R / 2].used = 3;
+						if (set[los - R].used == 2) set[los - R].used = 3;
+						if (set[los - 3 * R / 2].used == 2) set[los - 3 * R / 2].used = 3;
 						lista[i] = set[los];
 					}
 					set[los].ordinal == 1 ? ile_1++ : ile_2++;
@@ -1327,7 +1326,7 @@ void noun_phrase_list()
 					if (!Q3)
 					{
 						cout << "3rd quarter stats:" << endl;
-					cout << "MM: " << ile_MM << " MF: " << ile_MF << " MN: " << ile_MN << " FF: " << ile_FF << " FN: " << ile_FN << " FM: " << ile_FM << " NN: " << ile_NN << " NM: " << ile_NM << " NF: " << ile_NF << " 1: " << ile_1 << " 2: " << ile_2 << endl;
+						cout << "MM: " << ile_MM << " MF: " << ile_MF << " MN: " << ile_MN << " FF: " << ile_FF << " FN: " << ile_FN << " FM: " << ile_FM << " NN: " << ile_NN << " NM: " << ile_NM << " NF: " << ile_NF << " 1: " << ile_1 << " 2: " << ile_2 << endl;
 						ile_MM = 0;
 						ile_MF = 0;
 						ile_MN = 0;
@@ -1348,10 +1347,10 @@ void noun_phrase_list()
 						Q2 = false;
 						Q3 = true;
 					}
-					if (set[los].used != 3)
-					continue;
+					if (set[los].used > 3)
+						continue;
 					else if (lista[i - 2].congruent && lista[i - 1].congruent && set[los].congruent)
-					continue;
+						continue;
 					else if (!lista[i - 2].congruent && !lista[i - 1].congruent && !set[los].congruent)
 						continue;
 					else if (lista[i - 3].kategoria == set[los].kategoria || lista[i - 2].kategoria == set[los].kategoria || lista[i - 1].kategoria == set[los].kategoria)
@@ -1425,12 +1424,12 @@ void noun_phrase_list()
 						ile_NN++;
 					else if (set[los].rodzaj == 3 && set[los].rodzaj_cong == 1)
 						ile_NM++;
-				else if (set[los].rodzaj == 3 && set[los].rodzaj_cong == 2)
+					else if (set[los].rodzaj == 3 && set[los].rodzaj_cong == 2)
 						ile_NF++;
 				}
 			}
 		}
-		if (lista[2*R - 1].used)										//if the last word is drawn, break the loop the list is set
+		if (lista[2 * R - 1].used)										//if the last word is drawn, break the loop the list is set
 		{
 			do_list = false;
 			cout << "Draw finished successfully. List is set" << endl;
@@ -1454,11 +1453,10 @@ void noun_phrase_list()
 	cout << "Word   |   Distractor   |   Category   |   Type   |   Ordinal" << endl << endl << endl;
 	wypisz_zbior(listaA, cout, 2 * R);
 	fstream out;
-	out.open("lists_noun_phrase.txt", ios::out);									//save the list to a file
+	out.open("lists_noun_phrase.txt", ios::out);					//save the list to a file
 	out << "Word   |   Distractor   |   Category   |   Type   |   Ordinal" << endl << endl << endl;
 	wypisz_zbior(listaA, out, 2 * R);
 	out.close();
-	delete[]listaA;
 	cout << "\nGenerating list for noun phrase task finished" << endl;
 	return;
 }
